@@ -1,0 +1,1 @@
+Includes a Dockerfile for building a NINJAM server for armhf procesors (e.g. raspberry pi). Thanks to github.com/zeppelinux/ for the idea.
