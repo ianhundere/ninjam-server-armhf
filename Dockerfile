@@ -7,7 +7,7 @@ RUN git clone https://github.com/justinfrankel/ninjam
 WORKDIR /opt/ninjam/ninjam/server
 RUN make
 RUN mkdir -p /usr/local/ninjam
-RUN mv ninjamsrv /usr/local/ninjam
+RUN mv ninjamsrv /usr/local/ninjam/ninjamsrv
 RUN mv example.cfg /usr/local/ninjam/config.cfg
 RUN mv cclicense.txt /usr/local/ninjam/cclicense.txt
 
@@ -16,7 +16,6 @@ RUN mv cclicense.txt /usr/local/ninjam/cclicense.txt
 FROM ubuntu:latest
 
 COPY --from=builder /usr/local/ninjam /usr/local/ninjam
-ENV PATH /usr/local/ninjam:$PATH
 WORKDIR /usr/local/ninjam
 
 EXPOSE 2049
