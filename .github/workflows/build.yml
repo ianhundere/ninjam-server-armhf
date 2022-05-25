@@ -3,7 +3,7 @@ name: build
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 jobs:
   build:
@@ -27,6 +27,8 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/arm/v7
+          platforms: |-
+            linux/arm/v7
+            linux/arm64
           push: true
           tags: zfigz/ninjam-server:${{ env.RELEASE_VERSION }}
